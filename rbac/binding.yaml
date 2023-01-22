@@ -1,0 +1,13 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: custom-admin
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: custom-admin
+roleRef:
+  kind: Role
+  name: custom-admin
+  apiGroup: rbac.authorization.k8s.io
