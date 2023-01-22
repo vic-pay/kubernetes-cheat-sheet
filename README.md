@@ -131,8 +131,6 @@ K8S Security
 Access control
 --------------
 
-https://kubernetes-tutorial.schoolofdevops.com/configuring_authentication_and_authorization/
-
 Create account, role and binding:
 
     microk8s kubectl apply -f ./rbac/service-account.yaml
