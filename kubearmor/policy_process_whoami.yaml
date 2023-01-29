@@ -1,0 +1,19 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: kubearmor-file-whoami
+  namespace: default
+spec:
+  severity: 1
+  tags: ['file']
+  message: 'exploring via whoami'
+
+  selector:
+    matchLabels:
+      app: nginx-app
+
+  process:
+    matchPaths:
+    - path: /usr/bin/whoami
+
+  action: Audit

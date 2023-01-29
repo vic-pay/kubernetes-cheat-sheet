@@ -1,0 +1,19 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: kubearmor-network-ping
+  namespace: default
+spec:
+  severity: 1
+  tags: ['network']
+  message: Exploring via ping
+
+  selector:
+    matchLabels:
+      app: nginx-app
+
+  network:
+    matchProtocols:
+    - protocol: icmp
+
+  action: Audit

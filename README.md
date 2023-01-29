@@ -60,7 +60,7 @@ Working with Deployments
 
 Create deployment:
 
-    microk8s kubectl apply -f ./deplotment/init.yaml
+    microk8s kubectl apply -f ./deployment/init.yaml
 
 Deployment info:
 
