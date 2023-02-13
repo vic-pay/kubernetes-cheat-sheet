@@ -1,0 +1,14 @@
+---
+services:
+  tetragon-agent:
+    image: quay.io/cilium/tetragon:v0.8.3
+    container_name: tetragon-agent
+    hostname:       tetragon-agent
+    pid:      host
+    privileged: true
+    volumes:
+      - type:   bind
+        source: /sys/kernel/btf/vmlinux
+        target: /var/lib/tetragon/btf
+        read_only: true
+    entrypoint: /usr/bin/tetragon

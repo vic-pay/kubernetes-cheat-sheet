@@ -20,7 +20,8 @@ Content
 
 Kubernetes security:
 
-* :cop:       [Access control](docs/RBAC.md)
-* :mag:       [Audit](docs/AUDIT.md)
-* :shield:    [KubeArmor](docs/KUBEARMOR.md) - AppArmor, SELinux, or BPF-LSM enforcement 
-* :telescope: [Tracee](docs/TRACEE.md) - EBPF container audit 
+* :cop:        [Access control](docs/RBAC.md)
+* :mag:        [Audit](docs/AUDIT.md)
+* :shield:     [KubeArmor](docs/KUBEARMOR.md) - AppArmor, SELinux, or BPF-LSM enforcement 
+* :microscope: [Tracee](docs/TRACEE.md) - EBPF container audit 
+* :honeybee:   [Tetragon](docs/TETRAGON.md) - EBPF container audit
