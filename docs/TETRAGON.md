@@ -38,7 +38,14 @@ Test:
     echo 1 >> /tmp/1.txt
 
 
-Usefull resources:
+How to write policies?
+----------------------
+
+1. Check [examples](https://github.com/cilium/tetragon/tree/main/crds/examples)
+
+2. Check fields and possible params in [policy specs](https://github.com/cilium/tetragon/blob/main/pkg/k8s/apis/cilium.io/client/crds/v1alpha1/cilium.io_tracingpolicies.yaml)
+
+Another usefull resources:
 
 * https://b-nova.com/en/home/content/strengthen-your-system-with-tetragons-ebpf-based-security-observability-and-runtime-enforcement-capabilities
 * https://grsecurity.net/tetragone_a_lesson_in_security_fundamentals
