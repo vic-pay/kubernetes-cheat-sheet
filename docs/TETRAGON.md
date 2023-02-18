@@ -20,9 +20,11 @@ Install:
 
 Apply policy:
 
-    docker cp policy-exec.yaml tetragon-agent:/tmp/policy-exec.yaml
-
+    docker cp policy-exec.yaml tetragon-agent:/tmp/policy-exec.yaml && \
     docker exec -it tetragon-agent tetra tracingpolicy add /tmp/policy-exec.yaml
+
+    docker cp policy-write.yaml tetragon-agent:/tmp/policy-write.yaml && \
+    docker exec -it tetragon-agent tetra tracingpolicy add /tmp/policy-write.yaml
 
 Test:
 
@@ -31,6 +33,9 @@ Test:
     
     # Second console
     docker exec -it tetragon-agent whoami
+
+    docker run -it --rm alpine /bin/sh
+    echo 1 >> /tmp/1.txt
 
 
 Usefull resources:
