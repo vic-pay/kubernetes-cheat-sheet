@@ -6,7 +6,7 @@ Working with Pods
 
 Create pod:
 
-    microk8s kubectl apply -f ./pod/init.yaml
+    microk8s kubectl apply -f ./manifests/pod/init.yaml
 
 Pod info:
 

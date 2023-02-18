@@ -8,6 +8,35 @@ Tetragon can be used in K8S and standalone
 [Github](https://github.com/cilium/tetragon)
 
 
+Tetragon in Kubernetes
+----------------------
+
+Install:
+
+    microk8s helm repo add cilium https://helm.cilium.io
+    microk8s helm repo update
+    microk8s helm install tetragon cilium/tetragon -n kube-system
+    microk8s kubectl rollout status -n kube-system ds/tetragon -w
+
+Apply policy:
+
+    microk8s kubectl create -f manifests/tetragon/policy-write.yaml
+
+Start getting logs:
+
+    kubectl exec -it -n kube-system ds/tetragon -c tetragon -- tetra getevents -o compact-stdout -f
+
+Gen events (in another console):
+
+    kubectl exec -it -n kube-system ds/tetragon -c tetragon -- sh
+    touch /tmp/1.txt
+
+Delete resources:
+
+    microk8s helm uninstall tetragon -n kube-system
+    microk8s kubectl create -f manifests/tetragon/policy-write.yaml
+
+
 Tetragon in standalone mode
 ---------------------------
 
