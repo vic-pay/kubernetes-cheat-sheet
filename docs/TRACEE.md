@@ -32,18 +32,36 @@ Delete assets:
 Tracee in standalone mode
 -------------------------
 
-Docker-compose example with json logs.
+Tracee can get traces and alerts.
 
-Install:
+Docker-compose example with alerts in json format:
 
+    # Install
     cd manifests/tracee
-    docker-compose up -d
+    docker-compose -f docker-compose.alert.yml up -d
 
-Get logs:
-
+    # Get alerts
     docker-compose logs -f
 
-Delete assets:
-
-    docker-compose down
+    # Delete assets:
+    docker-compose -f docker-compose.alert.yml down
     docker image rm aquasec/tracee:0.11.0
+
+Docker-compose example with traces:
+
+    # Install
+    cd manifests/tracee
+    docker-compose -f docker-compose.trace.yml up -d
+
+    # Gen trace
+    docker run -it --rm alpine /bin/sh
+    whoami
+
+    # Get logs
+    docker-compose logs -f
+
+    # Delete assets:
+    docker-compose -f docker-compose.trace.yml down
+    docker image rm aquasec/tracee:0.11.0
+
+    

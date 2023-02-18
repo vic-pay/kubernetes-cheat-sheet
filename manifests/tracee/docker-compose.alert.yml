@@ -1,0 +1,17 @@
+---
+services:
+  tracee-agent:
+    image: aquasec/tracee:0.11.0
+    container_name: tracee-agent
+    hostname:       tracee-agent
+    pid:      host
+    privileged: true
+    environment:
+      - LIBBPFGO_OSRELEASE_FILE=/etc/os-release-host
+    volumes:
+      - type:   bind
+        source: /etc/os-release
+        target: /etc/os-release-host
+        read_only: true
+    command: 
+      - --output-template=templates/rawjson.tmpl
