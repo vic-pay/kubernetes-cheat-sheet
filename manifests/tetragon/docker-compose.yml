@@ -11,4 +11,9 @@ services:
         source: /sys/kernel/btf/vmlinux
         target: /var/lib/tetragon/btf
         read_only: true
-    entrypoint: /usr/bin/tetragon
+    entrypoint: 
+    - /usr/bin/tetragon
+    - --metrics-server
+    - 0.0.0.0:2112
+    ports:
+    - 2112:2112

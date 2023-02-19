@@ -78,3 +78,19 @@ Another usefull resources:
 
 * https://b-nova.com/en/home/content/strengthen-your-system-with-tetragons-ebpf-based-security-observability-and-runtime-enforcement-capabilities
 * https://grsecurity.net/tetragone_a_lesson_in_security_fundamentals
+
+
+Monitoring Tetragon
+-------------------
+
+Tetragon can be monitored via Prometheus. 
+
+1. Run tetragon with `/usr/bin/tetragon --metrics-server 0.0.0.0:2112` entrypoint
+
+2. Set `prometheus.yml`:
+
+    scrape_configs:
+    - job_name: node
+        scrape_interval: 5s
+        static_configs:
+        - targets: ['tetragon-agent:2112']
