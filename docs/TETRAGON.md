@@ -70,7 +70,7 @@ Test:
 How to write policies?
 ----------------------
 
-1. Check [examples](https://github.com/cilium/tetragon/tree/main/crds/examples)
+1. Check [examples](https://github.com/cilium/tetragon/tree/main/examples)
 
 2. Check fields and possible params in [policy specs](https://github.com/cilium/tetragon/blob/main/pkg/k8s/apis/cilium.io/client/crds/v1alpha1/cilium.io_tracingpolicies.yaml)
 
