@@ -1,0 +1,9 @@
+name: exec_bash
+description: Exec bash with follow
+scope:
+  - container
+defaultAction: log
+rules:
+  - event: execve
+    filters:
+      - comm=bash,sh

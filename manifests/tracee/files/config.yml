@@ -1,0 +1,20 @@
+blob-perf-buffer-size: 1024
+cache:
+    - none
+capabilities: []
+containers: false
+crs: []
+healthz: false
+install-path: /tmp/tracee
+listen-addr: :3366
+log:
+    - info
+metrics: false
+output:
+    - table
+#    - json
+perf-buffer-size: 1024
+pprof: false
+pyroscope: false
+rego: []
+signatures-dir: ""

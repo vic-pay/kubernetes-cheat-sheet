@@ -1,0 +1,11 @@
+name: open_sensetive_files
+description: Open sensetive files policy
+scope:
+  - container
+defaultAction: log
+rules:
+  - event: open
+    filters:
+      - args.pathname=/tmp/*
+      - args.pathname=/etc/passwd
+      - args.pathname=/etc/shadow
