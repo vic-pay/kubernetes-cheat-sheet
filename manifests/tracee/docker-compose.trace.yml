@@ -27,4 +27,5 @@ services:
       - --config /tracee/configs/config.yml
       - --policy /tracee/configs/policy/exec.yml
       - --policy /tracee/configs/policy/open.yml
+      - --policy /tracee/configs/policy/write.yml
 #      - --policy /tracee/configs/policy/signature_events.yml
