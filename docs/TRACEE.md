@@ -53,7 +53,13 @@ Docker-compose example with traces:
     cd manifests/tracee
     docker-compose -f docker-compose.trace.yml up -d
 
-    # Gen trace
+    # Gen events
+    docker run -it --rm alpine /bin/sh -c 'touch /tmp/1.txt && cat /tmp/1.txt'
+
+    docker run -it --rm alpine /bin/sh -c 'touch /mnt/1.txt && echo 1 >> /tmp/1.txt && rm /tmp/1.txt'
+
+    docker run -it --rm alpine /bin/sh -c 'whoami'
+
     docker run -it --rm alpine /bin/sh
     whoami
 

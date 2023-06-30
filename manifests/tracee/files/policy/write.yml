@@ -1,0 +1,12 @@
+name: write_example
+description: Write to files policy
+scope:
+  - container
+defaultAction: log
+rules:
+  - event: write
+    filters:
+      - args.pathname=/mnt/*
+  - event: writev
+    filters:
+      - args.pathname=/mnt/*
