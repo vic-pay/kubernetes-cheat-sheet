@@ -70,9 +70,8 @@ Check settings:
 
     microk8s kubectl config use-context microk8s
 
-    microk8s kubectl delete serviceaccount dev-admin
+    microk8s kubectl delete serviceaccount dev-admin -n dev
     microk8s kubectl delete clusterrolebinding dev-admin
-    microk8s kubectl delete clusterrole dev-admin
     microk8s kubectl delete rolebinding dev-admin -n dev
     microk8s kubectl delete role dev-admin -n dev
     microk8s kubectl delete namespace dev
