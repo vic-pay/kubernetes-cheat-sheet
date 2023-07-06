@@ -2,8 +2,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: default
-  name: custom-admin
+  namespace: dev
+  name: dev-admin
 rules:
 - apiGroups: ["*"]
   resources: ["*"]

@@ -19,3 +19,7 @@ Add dashboard (Optional):
 
     microk8s dashboard-proxy
     microk8s enable dashboard
+
+Add `kubectl` alias:
+
+    sudo snap alias microk8s.kubectl kubectl
