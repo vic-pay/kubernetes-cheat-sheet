@@ -13,12 +13,18 @@ Tracee in Kubernetes
 
 Install:
 
-    kubectl apply -f https://raw.githubusercontent.com/aquasecurity/tracee/v0.11.0/deploy/kubernetes/tracee/tracee.yaml
+    kubectl apply -f https://raw.githubusercontent.com/aquasecurity/tracee/v0.16.0/deploy/kubernetes/tracee/tracee.yaml
+
+    # Or
+
+    kubectl apply -f tracee/manifest.yml
 
 Get status:
 
-    microk8s kubectl get DaemonSet tracee
-    microk8s kubectl describe DaemonSet tracee
+    microk8s kubectl get DaemonSet tracee -n infosec
+    microk8s kubectl describe DaemonSet tracee -n infosec
+
+    microk8s kubectl exec tracee-{id} -n infosec -- sh -c "ls"
 
 Get logs:
 
@@ -27,6 +33,10 @@ Get logs:
 Delete assets:
 
     kubectl delete -f https://raw.githubusercontent.com/aquasecurity/tracee/v0.11.0/deploy/kubernetes/tracee/tracee.yaml
+
+    # Or
+
+    kubectl delete -f tracee/manifest.yml
 
 
 Tracee in standalone mode
