@@ -17,7 +17,7 @@ Install:
 
     # Or
 
-    kubectl apply -f tracee/manifest.yml
+    kubectl apply -f tracee/manifest-tracee.yml
 
 Get status:
 
@@ -28,7 +28,13 @@ Get status:
 
 Get logs:
 
-    microk8s kubectl logs -l app.kubernetes.io/name=tracee --all-containers -f
+    microk8s kubectl logs -l app.kubernetes.io/name=tracee --all-containers -f -n infosec
+
+(Optional) Deploy filebeat to gather tracee logs:
+
+    kubectl apply -f  tracee/manifest-filebeat.yml
+    microk8s kubectl logs -l app.kubernetes.io/name=filebeat --all-containers -f -n infosec
+    kubectl delete -f tracee/manifest-filebeat.yml
 
 Delete assets:
 
@@ -36,7 +42,7 @@ Delete assets:
 
     # Or
 
-    kubectl delete -f tracee/manifest.yml
+    kubectl delete -f tracee/manifest-tracee.yml
 
 
 Tracee in standalone mode
