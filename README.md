@@ -26,3 +26,4 @@ Kubernetes security:
 * :microscope: [Tracee](docs/TRACEE.md) - EBPF container audit 
 * :honeybee:   [Tetragon](docs/TETRAGON.md) - EBPF container audit
 * :orange_book: [AppArmor](docs/APPARMOR.md)
+* :incoming_envelope: [Network policy](docs/NETWORK-POLICY.md) - Traffic filtering in k8s

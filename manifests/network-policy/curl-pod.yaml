@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-tester-pod
+  labels:
+    app: curl-app
+spec:
+  containers:
+    - name: curl-tester-container
+      image: curlimages/curl:8.7.1
+      command: ["tail"]
+      args: ["-f", "/dev/null"]
